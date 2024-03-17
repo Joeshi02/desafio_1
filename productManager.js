@@ -18,7 +18,7 @@ class Productmanager {
     #readProducts() {
         try {
             if (fs.existsSync(this.#path)) {
-                return JSON.parse(fs.readFileSync(this.#path, 'utf-8'))
+                return JSON.parse(fs.readFileSync(this.#path, {encoding:'utf-8'}))
             }
             return [];
         } catch (error) {
@@ -28,7 +28,7 @@ class Productmanager {
 
     #saveFile() {
         try {
-            fs.writeFileSync(this.#path, JSON.stringify(this.#products))
+            fs.writeFileSync(this.#path, JSON.stringify(this.#products, null, 3))
         } catch (error) {
             console.log(`ocurrio un error al gurdar el archivo ${error}`);
         }

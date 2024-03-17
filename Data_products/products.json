@@ -1,29 +1,29 @@
 [
-    {
-        "id": 1,
-        "title": "laptop",
-        "description": "dell 16.5\"",
-        "price": "100000",
-        "thumbnail": "www.google.com",
-        "code": "19734",
-        "stock": "2"
-    },
-    {
-        "id": 2,
-        "title": "laptop",
-        "description": "dell 16.5\"",
-        "price": "100000",
-        "thumbnail": "www.google.com",
-        "code": "19735",
-        "stock": "2"
-    },
-    {
-        "id": 3,
-        "title": "laptop 2",
-        "description": "dell 16.5\"",
-        "price": "50",
-        "thumbnail": "www.google.com",
-        "code": "19736",
-        "stock": "20"
-    }
+   {
+      "id": 1,
+      "title": "laptop",
+      "description": "dell 16.5\"",
+      "price": "100000",
+      "thumbnail": "www.google.com",
+      "code": "19734",
+      "stock": "2"
+   },
+   {
+      "id": 2,
+      "title": "laptop",
+      "description": "dell 16.5\"",
+      "price": "100000",
+      "thumbnail": "www.google.com",
+      "code": "19735",
+      "stock": "2"
+   },
+   {
+      "id": 3,
+      "title": "laptop",
+      "description": "dell 16.5\"",
+      "price": "100000",
+      "thumbnail": "www.google.com",
+      "code": "19736",
+      "stock": "2"
+   }
 ]
