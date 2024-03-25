@@ -25,5 +25,32 @@
       "thumbnail": "www.google.com",
       "code": "19736",
       "stock": "2"
+   },
+   {
+      "id": 4,
+      "title": "laptop",
+      "description": "hp 16.5\"",
+      "price": "100000",
+      "thumbnail": "www.google.com",
+      "code": "19737",
+      "stock": "2"
+   },
+   {
+      "id": 5,
+      "title": "laptop",
+      "description": "acer 16.5\"",
+      "price": "100000",
+      "thumbnail": "www.google.com",
+      "code": "19738",
+      "stock": "2"
+   },
+   {
+      "id": 6,
+      "title": "laptop",
+      "description": "acer 16.5\"",
+      "price": "100000",
+      "thumbnail": "www.google.com",
+      "code": "19739",
+      "stock": "2"
    }
 ]

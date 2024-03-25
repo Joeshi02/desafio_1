@@ -1,12 +1,11 @@
-const fs = require('fs');
-
+import fs from 'fs'
 
 class Productmanager {
     #products
     #path;
     static ids = 0
     constructor() {
-        this.#path = './Data_products/products.json'
+        this.#path ='../src/data/products.json'
         this.#products = this.#readProducts();
     }
     #assignId() {
@@ -56,7 +55,10 @@ class Productmanager {
 
         return 'Producto añaido con exito'
     }
-    getProducts() {
+    getProducts(limit = 0) {
+        limit = Number(limit)
+        if (limit > 0)
+        return this.#products.slice(0,limit)
         return this.#products
     }
     getProductsById(id) {
@@ -91,4 +93,4 @@ class Productmanager {
 
 
 
-module.exports = Productmanager
+export default Productmanager
