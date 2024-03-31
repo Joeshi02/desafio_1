@@ -1,24 +1,20 @@
 import express from "express"
-import Productmanager from "./productManager.js";
+import productRouter from './routers/productsRouter.js'
+import cartRouter from './routers/cartRouter.js'
 
-const PORT = 3000
+const PORT = 8080
 
 const app = express()
+
+app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
 
 app.get("/", (req,res) => {
     res.send("server basico con express")
 })
 
-app.get("/products", (req, res) =>{
-    const {limit} = req.query
-    const p = new Productmanager ();
-    return res.json({productos: p.getProducts(limit)})
-})
-app.get("/products/:pid", (req, res) =>{
-   const {pid} = req.params
-   const p = new Productmanager()
-    return res.json({producto: p.getProductsById(Number(pid))})
-})
+app.use('/api/products',productRouter)
+app.use('/api/cart',cartRouter)
 
 
 app.listen(PORT, ()=> console.log(`Server online en puerto ${PORT}`))

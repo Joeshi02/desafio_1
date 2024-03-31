@@ -32,9 +32,9 @@ class Productmanager {
             console.log(`ocurrio un error al gurdar el archivo ${error}`);
         }
     }
-    addProduct(title, description, price, thumbnail, code, stock) {
-        if (!title || !description || !price || !thumbnail || !code || !stock)
-            return 'Todos los datos son necesarios (title, description, price, thumbnail, code, stock)'
+    addProduct(title, description, price, thumbnails=[], code, stock, category, status = true) {
+        if (!title || !description || !price || !code || !stock || !category)
+            return 'Todos los datos son necesarios (title, description, price, code, stock, category)'
         const codeRepeat = this.#products.some(p => p.code == code)
         if (codeRepeat)
             return `El codigo ${code} ya esta ocupado, intente nuevamente`
@@ -46,9 +46,11 @@ class Productmanager {
             title,
             description,
             price,
-            thumbnail,
+            thumbnails,
             code,
-            stock
+            stock,
+            category,
+            status
         };
         this.#products.push(newProduct);
         this.#saveFile()
@@ -62,11 +64,14 @@ class Productmanager {
         return this.#products
     }
     getProductsById(id) {
+        let status= false
+        let msg = `El producto con id ${id} no existe`
         const product = this.#products.find(p => p.id == id)
-        if (product)
-            return product
-        else
-            return `Not Found`
+        if (product){
+            status= true
+            msg = product            
+        }
+        return {status,msg}
     }
     updateProducts(id, updateObjects) {
         let message = `EL producto ${id} no existe`
@@ -74,7 +79,14 @@ class Productmanager {
         const index = this.#products.findIndex(p => p.id === id)
         if (index !== 1) {
             const { id, ...rest } = updateObjects;
-            this.#products[index] = { ...this.#products[index], ...rest }
+            const allowedPropieties =['title', 'description', 'price', 'code', 'thumbnails', 'stock', 'category', 'status']
+            const updatePropeties = Object.keys(rest)
+            .filter(propieties => allowedPropieties.includes(propieties))
+            .reduce((obj,key) => {
+                obj[key]=rest[key]
+                return obj
+            },{})
+            this.#products[index] = { ...this.#products[index], ...updatePropeties }
             this.#saveFile()
             message = 'Producto actualizado con exito!'
         }
@@ -87,7 +99,9 @@ class Productmanager {
             this.#products = this.#products.filter(p => p.id !== id)
             this.#saveFile()
             message = 'Producto eliminado con exito!'
+        
         }
+        return message
     }
 }
 
