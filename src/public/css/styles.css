@@ -1,0 +1,65 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td{
+    border: 1px solid olive;
+    text-align: center;
+}
+th {
+    background-color: wheat;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+li{
+    margin-top: 10px;
+}
+
+/* Estilos generales para el formulario */
+#form-products {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para las etiquetas de los campos */
+  #form-products label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los campos de entrada */
+  #form-products input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Para que el padding no afecte al ancho total */
+  }
+  
+  /* Estilos para el botón de enviar */
+  #form-products button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Estilos adicionales para el botón al pasar el mouse sobre él */
+  #form-products button:hover {
+    background-color: #45a049;
+  }
+  

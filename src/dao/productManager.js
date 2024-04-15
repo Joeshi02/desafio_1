@@ -32,7 +32,7 @@ class Productmanager {
             console.log(`ocurrio un error al gurdar el archivo ${error}`);
         }
     }
-    addProduct(title, description, price, thumbnails=[], code, stock, category, status = true) {
+    addProduct({title, description, price, thumbnails=[], code, stock, category, status = true}) {
         if (!title || !description || !price || !code || !stock || !category)
             return 'Todos los datos son necesarios (title, description, price, code, stock, category)'
         const codeRepeat = this.#products.some(p => p.code == code)

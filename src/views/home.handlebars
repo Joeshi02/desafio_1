@@ -1,0 +1,45 @@
+<div>
+    <h3>Prueba desafio</h3>
+    <h2>Lista de productos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>description</th>
+                <th>price</th>
+                <th>thumbnails</th>
+                <th>code</th>
+                <th>stock</th>
+                <th>category</th>
+                <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>
+                    {{#if this.thumbnails.length}}
+                    <a href="{{this.thumbnails.[0]}}" target="_blank">{{this.thumbnails.[0]}}</a>
+                    {{else}}
+                    Sin imagen
+                    {{/if}}
+                </td>
+                <td>{{this.code}}</td>
+                <td>{{this.stock}}</td>
+                <td>{{this.category}}</td>
+                <td>{{#if this.status}}
+                    Disponible
+                    {{else}}
+                    No disponible
+                    {{/if}}
+                </td> 
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
