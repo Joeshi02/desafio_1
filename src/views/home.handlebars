@@ -1,5 +1,5 @@
 <div>
-    <h3>Prueba desafio</h3>
+    <h3>Prueba desafio 5</h3>
     <h2>Lista de productos</h2>
     <table>
         <thead>
@@ -18,7 +18,7 @@
         <tbody>
             {{#each products}}
             <tr>
-                <td>{{this.id}}</td>
+                <td>{{this._id}}</td>
                 <td>{{this.title}}</td>
                 <td>{{this.description}}</td>
                 <td>{{this.price}}</td>
@@ -42,4 +42,10 @@
             {{/each}}
         </tbody>
     </table>
+</div>
+<hr>
+<div>
+    <a href="/chat"> Ir al chat</a>
+    <br>
+    <a href="/realtimeproducts">Ir al real times product</a>
 </div>

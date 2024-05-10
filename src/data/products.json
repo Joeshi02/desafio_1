@@ -119,5 +119,16 @@
       "stock": "14",
       "category": "gamer",
       "status": true
+   },
+   {
+      "id": 12,
+      "title": "compu",
+      "description": "asfghdjf",
+      "price": "235456",
+      "thumbnails": [],
+      "code": "14235465",
+      "stock": "12",
+      "category": "safdghf",
+      "status": true
    }
 ]
