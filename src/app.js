@@ -46,7 +46,7 @@ let mensajes=[]
       socket.emit('products', result.products)
       
     })
-    socket.on ("id", async nombre=>{
+    socket.on ("id", async (nombre)=>{
       let mensajesMongo = await messagesModel.find()
       socket.emit("mensajesPrevios", mensajesMongo)
       socket.broadcast.emit("nuevoUsuario", nombre)
