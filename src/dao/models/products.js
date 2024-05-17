@@ -1,8 +1,9 @@
 import mongoose from "mongoose"
+import  paginate from "mongoose-paginate-v2"
 
 const nameCollection = 'products'
-const ProductSchema = new mongoose.Schema({
-
+const ProductSchema = new mongoose.Schema(
+    {
     title: { type: String, require: [true, 'El titulo es obligatorio'] },
     description: { type: String, require: [true, 'La descripcion es obligatoria'] },
     price: { type: Number, require: [true, 'El precio del producto es obligatorio'] },
@@ -12,5 +13,7 @@ const ProductSchema = new mongoose.Schema({
     category: { type: String, require: [true, 'La categoria del producto es obligatoria'] },
     status: { type: Boolean, default: true },
 })
+
+ProductSchema.plugin(paginate)
 
 export const productModel = mongoose.model(nameCollection, ProductSchema)

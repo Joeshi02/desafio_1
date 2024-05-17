@@ -7,12 +7,41 @@ const p = new Productmanager()
 
 router.get("/", async (req, res) => {
     try {
-        const { limit } = req.query; 
-        const products = await p.getProducts(limit);
-        return res.json({ productos: products });
+        
+        let page = parseInt(req.query.page) || 1
+        let limit = parseInt(req.query.limit) || 10
+        let propiedad = req.query.propiedad
+        let valor = req.query.valor
+        let sort = req.query.sort || undefined
+        let stock = parseInt(req.query.stock) || undefined
+
+        let filtro = {} 
+
+        if (propiedad && valor) {
+            filtro[propiedad] = valor
+        }
+         if (stock) {
+            filtro.stock = {$gte: stock}
+         }
+
+
+        let opciones = {
+            page: page,
+            limit: limit,
+            lean: true,
+            sort: sort
+        }
+
+
+        const resultado = await p.getProductsPaginate(filtro, opciones)
+            res.setHeader("Content-Type", "application/json")          
+            res.json(resultado)
+            
+    
+
     } catch (error) {
-        console.log('No se pudo obtener los productos', error.message);
-        return res.status(500).json({ error: 'Error al obtener los productos' });
+        res.setHeader("Content-Type", "application/json")
+        res.status(500).json({ Error: "Error 500 - Error inesperado en el servidor" })
     }
 });
 router.get("/:pid",async (req, res) =>{
