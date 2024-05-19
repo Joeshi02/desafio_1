@@ -1,0 +1,15 @@
+<h1>Productos</h1>
+<hr>
+<input type="text" value="{{carrito._id}}" hidden id="carrito">
+{{#each products}}
+    <div>
+        <h2>{{title}}</h2>
+        <h3><strong>{{description}}</strong></h3>
+        <p>Precio: {{price}}</p>
+        <p>Código: {{code}}</p>
+        <button onclick="comprar('{{_id}}')">Agregar al carrito</button>
+    </div>
+{{/each}}
+<br>
+
+<script src="/js/products.js"></script>
