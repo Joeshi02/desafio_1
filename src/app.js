@@ -3,12 +3,14 @@ import mongoose from "mongoose"
 import productRouter from './routers/productsRouter.js'
 import cartRouter from './routers/cartRouter.js'
 import views from './routers/views.js'
+import sessionsRouter from "./routers/sessionsRouter.js"
 import { Server } from "socket.io"
 import { engine } from "express-handlebars"
 import __dirname from "./utils.js"
 import Productmanager from "./dao/productManager.js"
 import { productModel } from "./dao/models/products.js"
 import { messagesModel } from "./dao/models/messages.js"
+import sessions from "express-session"
 
 const PORT = 8080
 
@@ -17,6 +19,9 @@ const p = new Productmanager()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(sessions({
+  secret:"CoderJoaquin", resave:true, saveUninitialized: true
+}))
 app.use(express.static(__dirname + '/public'))
 
 app.engine('handlebars', engine({
@@ -31,6 +36,7 @@ app.set('view engine', 'handlebars');
 app.use('/', views)
 app.use('/api/products', productRouter)
 app.use('/api/cart', cartRouter)
+app.use('/api/sessions',sessionsRouter)
 
 let usuarios = []
 let mensajes = []

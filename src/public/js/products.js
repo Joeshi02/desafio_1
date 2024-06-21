@@ -9,6 +9,7 @@ const comprar =async (pid) => {
     if (respuesta.status === 200){
         let datos = await respuesta.json()
         console.log(datos);
+        alert("producto agregado")
         
     }
     

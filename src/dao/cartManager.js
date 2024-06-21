@@ -2,9 +2,16 @@ import { cartModel } from './models/carts.js';
 
 class Cartmanager {
 
+  async getOneByPopulate(filtro={}){
+    return await cartModel.findOne(filtro).populate("products.product").lean()
+  }
   async createCart() {
     return await cartModel.create({})
   }
+  async create(){
+    let carrito=await cartModel.create({productos:[]})
+    return carrito.toJSON()
+}
   async getCartById(id) {
     try {
       return await cartModel.findById(id).populate("products.product");
