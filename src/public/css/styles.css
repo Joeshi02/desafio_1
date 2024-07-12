@@ -1,82 +1,221 @@
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+/* Estilos existentes */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
-th, td{
-    border: 1px solid olive;
-    text-align: center;
+th, td {
+  border: 1px solid olive;
+  text-align: center;
 }
 th {
-    background-color: wheat;
+  background-color: wheat;
 }
-ul{
-    list-style: none;
-    padding: 0;
+ul {
+  list-style: none;
+  padding: 0;
 }
-li{
-    margin-top: 10px;
+li {
+  margin-top: 10px;
 }
 
 /* Estilos generales para el formulario */
 #form-products {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estilos para las etiquetas de los campos */
-  #form-products label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-  
-  /* Estilos para los campos de entrada */
-  #form-products input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Para que el padding no afecte al ancho total */
-  }
-  
-  /* Estilos para el botón de enviar */
-  #form-products button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  /* Estilos adicionales para el botón al pasar el mouse sobre él */
-  #form-products button:hover {
-    background-color: #45a049;
-  }
-  #mensajes{
-    margin-top: 15px;
-    width: 90%;
-    height: 350px;
-    overflow-y: scroll;
-    box-shadow: 0px 0px 5px #333 inset;
-    padding: 5px;
-    background-color: cadetblue;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.mensaje{
-    border: 1px solid #555;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: wheat;
-    display: inline-block;
-    margin-top: 5px;
+/* Estilos para las etiquetas de los campos */
+#form-products label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+#form-products input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Para que el padding no afecte al ancho total */
+}
+
+/* Estilos para el botón de enviar */
+#form-products button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos adicionales para el botón al pasar el mouse sobre él */
+#form-products button:hover {
+  background-color: #45a049;
+}
+#mensajes {
+  margin-top: 15px;
+  width: 90%;
+  height: 350px;
+  overflow-y: scroll;
+  box-shadow: 0px 0px 5px #333 inset;
+  padding: 5px;
+  background-color: cadetblue;
+}
+
+.mensaje {
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: wheat;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Nuevos estilos para el login */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+}
+
+.login-container hr {
+  margin: 20px 0;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.login-container br {
+  margin: 20px 0;
+}
+/* Estilos para la página de productos */
+.product-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+.product-container hr {
+  margin: 20px 0;
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.product h3 {
+  color: #666;
+}
+
+.product p {
+  color: #555;
+}
+
+.product button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.product button:hover {
+  background-color: #45a049;
+}
+
+.product-container a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.product-container a:hover {
+  background-color: #0056b3;
+}
+/* Estilos para el botón de GitHub */
+.botonGit {
+  display: block;
+  margin: 20px 0;
+}
+
+.botonGit a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.botonGit a:hover {
+  background-color: #555;
 }

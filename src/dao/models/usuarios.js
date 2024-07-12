@@ -13,6 +13,9 @@ const usuariosSchema = new mongoose.Schema({
     carrito: {
         type: mongoose.Types.ObjectId, ref: "carts"
     }
+},
+{
+    strict:false
 })
 
 export const usuariosModel = mongoose.model(usuariosCollection, usuariosSchema)

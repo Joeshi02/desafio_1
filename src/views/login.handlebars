@@ -1,11 +1,25 @@
-<h1>Registro</h1>
-<hr>
-<form action="/api/sessions/login" method="post">
-    <input type="email" name="email" placeholder="Correo electronico">
-    <input type="password" name="password" placeholder="Contraseña">
-    <br>
-    <input type="submit" value="Login">
-
-<br><br>
-{{>navBar}}
-</form>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <div class="login-container">
+         {{>navBar}}
+        <h1>Login</h1>
+        <hr>
+        <form action="/api/sessions/login" method="post">
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <br>
+            <input type="submit" value="Login">
+            <br><br>            
+        </form>
+        <span class="botonGit"><a href="/api/sessions/github">Acceder con github</a></span>
+    </div>
+</body>
+</html>

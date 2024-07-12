@@ -1,17 +1,19 @@
-<h1>Productos</h1>
-<hr>
-<input type="text" value="{{carrito._id}}" hidden id="carrito">
-{{#each products}}
-    <div>
-        <h2>{{title}}</h2>
-        <h3><strong>{{description}}</strong></h3>
-        <p>Precio: {{price}}</p>
-        <p>Código: {{code}}</p>
-        <button onclick="comprar('{{_id}}')">Agregar al carrito</button>
-    </div>
-{{/each}}
-<br>
-<a href="/carrito/{{carrito._id}}">Ver Carrito</a>
-<br><br>
-{{>navBar}}
+<div class="product-container">
+    <h1>Productos</h1>
+    <hr>
+    <input type="text" value="{{carrito._id}}" hidden id="carrito">
+    {{#each products}}
+        <div class="product">
+            <h2>{{title}}</h2>
+            <h3><strong>{{description}}</strong></h3>
+            <p>Precio: {{price}}</p>
+            <p>Código: {{code}}</p>
+            <button onclick="comprar('{{_id}}')">Agregar al carrito</button>
+        </div>
+    {{/each}}
+    <br>
+    <a href="/carrito/{{carrito._id}}">Ver Carrito</a>
+    <br><br>
+    {{>navBar}}
+</div>
 <script src="/js/products.js"></script>

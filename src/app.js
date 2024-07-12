@@ -11,6 +11,8 @@ import Productmanager from "./dao/productManager.js"
 import { productModel } from "./dao/models/products.js"
 import { messagesModel } from "./dao/models/messages.js"
 import sessions from "express-session"
+import passport from "passport"
+import { initPassport } from "./config/passport.config.js"
 
 const PORT = 8080
 
@@ -22,6 +24,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(sessions({
   secret:"CoderJoaquin", resave:true, saveUninitialized: true
 }))
+
+initPassport()
+app.use(passport.initialize())
+app.use(passport.session()) //solo si hay sessions
+
 app.use(express.static(__dirname + '/public'))
 
 app.engine('handlebars', engine({
